@@ -28,9 +28,12 @@
         <ul>
             <li>Melon type: {{ display_melon.melon_type }}</li>
             <li>Color: {{ display_melon.color }}</li>
+            <!-- calls back to melons.txt file - last attribute (0 or 1) to
+            determine if it's seedless or not -->
             {% if display_melon.seedless %}
               <li>Seedless melon</li>
             {% else %}
+            <!-- 0 is == WARNING! -->
               <li class='warning'>Warning! This melon has seeds</li>
             {% endif %}
         </ul>
