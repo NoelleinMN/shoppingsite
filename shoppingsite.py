@@ -97,13 +97,15 @@ def add_to_cart(melon_id):
     #   dictionary keyed to the string "cart") if not
     session["cart"] = {}
     # - check if the desired melon id is the cart, and if not, put it in
-    if melon_id in "cart":
+    session["cart"][melon_id] = session["cart"].get(melon_id, 0) + 1
+    # if melon_id in "cart":
     # - increment the count for that melon id by 1
-        melon_id += 1
+            # melon_count += 1
     # - flash a success message
     flash("Your order has been added to the cart!")
     
     # - redirect the user to the cart page
+    print('\n'*5, session["cart"], '\n'*5)
     return redirect("/cart")
 
 
